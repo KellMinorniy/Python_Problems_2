@@ -1,6 +1,8 @@
+import re
+
 def fun(s):
-    # your code here
-    # return True if s is a valid email, else return False
+    email_regex = r'^[a-zA-Z0-9._-]+@[a-zA-Z0-9]+\.[a-zA-Z]{1,3}$'
+    return bool(re.match(email_regex, s))
 
 def filter_mail(emails):
     return list(filter(fun, emails))
